@@ -1,7 +1,6 @@
 from rest_framework import serializers
-
-class MusicSerializers(serializers.Serializer):
-    name = serializers.CharField()
-    cover = serializers.ImageField()
-    song = serializers.FileField()
-    artist = serializers.CharField()
+from .models import Music
+class MusicSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Music
+        exclude = ['id']
