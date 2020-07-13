@@ -1,9 +1,7 @@
 from django.urls import path
 from . import views
+from .api_url import router
+
+
 app_name = 'Music'
-urlpatterns = [
-    path('capture',views.capture,name='capture'),
-    path('sign',views.sign,name='sign'),
-    path('sign/<int:id>',views.signid,name='signid'),
-    path('relase-song',views.relase,name='relase-sign'),
-]
+urlpatterns = router.urls

@@ -18,9 +18,12 @@ from django.urls import path , include
 from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework.authtoken.views import obtain_auth_token
+from rest_framework import routers
+from music.api_url import router
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('music/', include('music.urls')),
+    path('music/', include(router.urls)),
     path('authenticate_token', obtain_auth_token),
 ]
 
